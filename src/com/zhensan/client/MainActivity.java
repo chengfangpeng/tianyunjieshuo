@@ -23,6 +23,8 @@ public class MainActivity extends Activity {
                     .add(R.id.container, new PlaceholderFragment())
                     .commit();
         }
+        
+        System.out.println("呵呵呵");
     }
 
 
