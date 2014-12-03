@@ -24,7 +24,7 @@ public class MainActivity extends Activity {
                     .commit();
         }
         
-        System.out.println("test push");
+        System.out.println("呵呵呵");
     }
 
 
