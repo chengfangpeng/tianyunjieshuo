@@ -1,12 +1,24 @@
 package com.zhensan.client.option.loading;
 
+import java.net.HttpURLConnection;
+
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.http.AndroidHttpClient;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 
 import com.ab.view.slidingmenu.SlidingFragmentActivity;
+import com.android.volley.NetworkResponse;
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.toolbox.BasicNetwork;
+import com.android.volley.toolbox.HttpStack;
+import com.zhensan.client.MainActivity;
+import com.zhensan.client.R;
 import com.zhensan.client.parentclass.ParentActivity;
+import com.zhensan.client.service.ClientTask;
 import com.zhensan.client.service.MobileApplication;
 
 public class LoadingActivity extends ParentActivity{
@@ -18,7 +30,7 @@ public class LoadingActivity extends ParentActivity{
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		sPreferences = getSharedPreferences(MobileApplication.TAG, MODE_PRIVATE);
-		threadTask();
+//		threadTask();
 		intentToMain();
 
 	}
@@ -29,8 +41,10 @@ public class LoadingActivity extends ParentActivity{
 			
 			@Override
 			public void run() {
-				
+				startActivity(new Intent(LoadingActivity.this,MainActivity.class));
+				finish();
 			}
+				
 		}, 2000);
 		
 		
@@ -39,7 +53,7 @@ public class LoadingActivity extends ParentActivity{
 
 	@Override
 	protected int getLayoutId() {
-		return 0;
+		return R.layout.loading;
 	}
 
 	@Override
