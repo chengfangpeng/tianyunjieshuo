@@ -1,8 +1,9 @@
 package com.zhensan.client.service;
 
-import android.app.Application;
+import com.youku.player.YoukuPlayerApplication;
 
-public class MobileApplication extends Application{
+
+public class MobileApplication extends YoukuPlayerApplication{
 	
 	
 	private static MobileApplication mobileApplication;

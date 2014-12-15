@@ -14,11 +14,18 @@
 
     <!-- Application theme. -->
     <style name="AppTheme" parent="AppBaseTheme">
-          <item name="android:windowBackground">@color/white</item>
-        <item name="android:windowFullscreen">false</item>
+        <item name="android:windowBackground">@color/white</item>
+	    <item name="android:windowFullscreen">false</item>
         <item name="android:windowContentOverlay">@null</item>
-        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+	    <item name="android:windowNoTitle">true</item>
+	    <item name="android:windowTitleBackgroundStyle">@style/mCustomWindowTitleBackground</item>
+	</style>
+ 	<style name="mCustomWindowTitleBackground" parent="android:Widget">
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:paddingLeft">10dip</item>
+        <item name="android:paddingTop">5dip</item>
     </style>
+   
   <style name="NoTitleTheme" parent="AppBaseTheme">
           <item name="android:windowBackground">@color/white</item>
         <item name="android:windowFullscreen">false</item>
